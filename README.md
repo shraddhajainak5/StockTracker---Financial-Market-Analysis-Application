@@ -1,7 +1,8 @@
 # StockTracker - Financial Market Analysis Application
 
 A comprehensive stock market analysis application built with AJAX, Angular, Node.js, and MongoDB, providing real-time stock data, portfolio management, and watchlist functionality.
-
+## Live Demo
+[View Live Demo](https://shraddhaassignment3webtechnology-idpstnzwpq-uw.a.run.app/search/home)
 ## Project Overview
 
 StockTracker is a full-stack web application that allows users to:
