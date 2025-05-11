@@ -1,0 +1,39 @@
+<div >
+    <p class="portfoliohead">My Portfolio</p>
+    <div *ngIf="portfolioloadingspinner" class="portfoliospinner"></div>
+    <div *ngIf="!portfolioloadingspinner">
+    
+    <p class="porfoliowallet" >Money in wallet: {{walletamount}}</p>
+    <div class="portfolioemptybox" *ngIf="portfoliocollectiondata.length === 0">
+        <p class="portfolioemptytext">Currently you don't have any stock.</p>
+    </div>
+    <div  *ngFor="let items of portfoliocollectiondata" class="portfolioroute">
+        
+        <div class="portfoliocompanydiv" *ngIf="profile&&summary">
+            <p>
+                <span class="portcompticker">{{items.ticker}}</span>
+                <span class="portcompname">{{items.profile.name}}</span>
+            
+             </p>
+        </div>
+        <table class="portquanttable"> 
+            <tr><td>Quantity:</td><td>{{items.quantity}}</td></tr>
+            <tr><td>Total cost:</td><td>{{items.total}}</td></tr>
+            <tr><td>Avg Cost/Share:</td><td>{{items.total/items.quantity}}</td></tr>
+        </table>
+        <table class="portpricetable">
+            <tr><td>Change:</td><td class="portchangegreen" *ngIf="items.total/items.quantity - items.summary.c>0"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16" id="IconChangeColor"> <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" id="mainIconPathAttribute" fill="green"></path></svg>{{items.total/items.quantity - items.summary.c}}</td><td class="portchangered" *ngIf="items.total/items.quantity - items.summary.c<0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="IconChangeColor" height="15" width="15"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" id="mainIconPathAttribute" fill="#ff0000"></path></svg>{{items.total/items.quantity - items.summary.c}}</td><td class="portchangeblack" *ngIf="items.total/items.quantity - items.summary.c==0">{{items.total/items.quantity - items.summary.c}}</td></tr>
+            <tr><td>Current Price:</td><td class="portcurrgreen" *ngIf="items.total/items.quantity - items.summary.c>0">{{items.summary.c}}</td><td class="portcurrred" *ngIf="items.total/items.quantity - items.summary.c<0">{{items.summary.c}}</td><td class="portcurrblack" *ngIf="items.total/items.quantity - items.summary.c==0">{{items.summary.c}}</td></tr> 
+            <tr><td>Market Value:</td><td class="portvalgreen" *ngIf="items.total/items.quantity - items.summary.c>0">{{items.summary.c*items.quantity}}</td><td class="portvalred" *ngIf="items.total/items.quantity - items.summary.c<0">{{items.summary.c*items.quantity}}</td><td class="portvalblack" *ngIf="items.total/items.quantity - items.summary.c==0">{{items.summary.c*items.quantity}}</td></tr>
+        </table>
+    <div class="buttonport">
+    <button class="portbuybutton" (click)="openbuymodal(items.ticker, items.summary.c)">Buy</button>
+    <button class="portsellbutton" (click)="opensellmodal(items.ticker, items.summary.c)">Sell</button>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    <div class="portfoliofooter">
+        <p class="watchlistfooterword">Powered By <a href="https://finnhub.io/">Finnhub.io</a></p>
+      </div>

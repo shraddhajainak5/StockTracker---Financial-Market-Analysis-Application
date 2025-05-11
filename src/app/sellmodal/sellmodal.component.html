@@ -1,0 +1,25 @@
+<div mat-dialog-content >
+    <div class="buyhead">
+        <p class="buysymbol">{{symbol}}</p>
+    </div>
+    <div class="buycontent">
+        <button class="buyclose" (click)="closemodal()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg></button>
+        <p class="buycurr">Current Price:{{currentprice}}</p>
+        <p class="buywallet">Money in wallet:{{walletamount}}</p>
+    </div>
+    <div>
+        <label class="buyquantity" for="quantity">Quantity:</label>
+        <input class="buyinput" type="number" id="quantity" [(ngModel)]="quantity" (input)="cansellstocks()">
+        <p class="buyerror" *ngIf="quantity>quantitypresent">You cannot sell the stocks that you don't have!</p>
+        <p class="buytotal">Total:{{total}}</p>
+        <button  class="buymodalbutton" [class.buttondisabled]="!cansell||quantity>quantitypresent" [disabled]="!cansell||quantity>quantitypresent" (click)="sellstock(symbol,quantity,total)">Sell</button>
+
+    </div>
+
+
+    
+
+
+</div>

@@ -1,0 +1,18 @@
+<div class="navbar">
+  <p class="heading">Stock Search
+  <button class="searchbutton navbutton" [ngClass]="{ 'active': selectedtab === 'search' }" (click) ="selecttab('search')"><a class="searchtext" routerLink="/search/home">Search</a></button>
+  <button class="watchlistbutton navbutton" [ngClass]="{ 'active': selectedtab === 'watchlist' }" (click) ="selecttab('watchlist')"><a class="watchlisttext" routerLink="/watchlist">Watchlist</a></button>
+  <button class="portfoliobutton navbutton" [ngClass]="{ 'active': selectedtab === 'portfolio' }" (click) ="selecttab('portfolio')"><a class="portfoliotext" routerLink="/portfolio">Portfolio</a></button></p>
+</div>
+<div class="fill">
+  
+  
+  <router-outlet></router-outlet>
+  
+</div>
+
+
+
+
+
+

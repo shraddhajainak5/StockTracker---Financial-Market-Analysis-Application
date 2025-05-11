@@ -1,0 +1,2079 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; 
+    overflow-x: auto;}
+    body { margin: 0; 
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        display: flex;
+        flex-direction: column; }
+    ul {
+        list-style-type: none;
+      }
+    
+    .navbar{
+        
+        height: 45px;
+        background-color: rgb(18, 18, 155);
+        color: white;
+        position: relative;
+        top: -20px;
+    }
+    
+    .heading{
+        padding-left: 10px;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 16px; 
+        position: relative;
+        top: 10px;
+        
+    }
+    
+    .searchbutton{
+        position: relative;
+        left: 972px;
+        background: transparent;
+        height: 30px;
+        font-size: 10px;
+        width: 60px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+        text-decoration: none;
+        border-color: white; 
+        
+    }
+    
+    .searchtext{
+        text-decoration: none;
+        color: white;
+        size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .watchlistbutton{
+        position: relative;
+        left: 972px;
+        background: transparent;
+        width:60px;
+        height: 30px;
+        font-size: 10px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+        text-decoration: none;
+        border-color: white;
+       
+    }
+    
+    .watchlisttext{
+        text-decoration: none;
+        color: white;
+        size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .portfoliobutton{
+        position: relative;
+        background: transparent;
+        height: 30px;
+        width:60px;
+        font-size: 10px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+        right: 10px;
+        text-decoration: none;
+        left: 972px;
+        border-color: white;
+       
+    }
+    
+    .portfoliotext{
+        text-decoration: none;
+        color: white;
+        size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    
+    
+    .mainheading{
+        padding-left: 550px;
+        padding-top: 10px;
+        font-size: 30px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight:350;
+    }
+    
+    .inputdiv{
+        height: 300px;
+    }
+    
+    .inputbar{
+        position: relative;
+        left: 450px;
+    }
+    
+    .inputbar input{
+        width: 350px;
+        border: solid rgb(37, 37, 171);
+        border-right: none;
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+        height: 19.3px;
+        position: relative;
+        top: -1.9px;
+        box-shadow: none;
+    
+    }
+    
+    .inputsearchbutton{
+        background: transparent;
+        border-left: none;
+        border-right: none;
+        border-top:solid rgb(37, 37, 171);
+        border-bottom: solid rgb(37, 37, 171);
+    }
+    
+    .inputclearbutton{
+        background: transparent;
+        border-left: none;
+        border-top:solid rgb(37, 37, 171);
+        border-bottom: solid rgb(37, 37, 171);
+        border-right:solid rgb(37, 37, 171);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    
+    
+    .footer{
+        position: relative;
+        height: 40px;
+        background-color: rgb(216, 216, 222);
+        top: 57px;
+        display: flex;
+    }
+    
+    .footerword{
+        position: relative;
+        padding-left: 600px;
+        top: -10px;
+    }
+    
+    .autocompletesuggestion{
+        z-index: 1;
+        position: relative;
+        top: -400px;
+        left: 400px;
+    }
+    
+    .mat-autocomplete-panel{
+        z-index: 2;
+        position: relative;
+        top: -800px;
+        left: 300px;
+    }
+    
+    .companydetails{
+        z-index: 1;
+        position: relative;
+        top: -240px;
+        left: 225px;
+        width: 300px;
+        height: 130px;
+      
+    }
+    
+    .tickername{
+        font-size: 28px;
+        font-weight: 500;
+    }
+    
+    .watchlistwhitestar{
+        border: none;
+        height: 8px;
+        position: relative;
+        top: -142px;
+        background: none;
+        left: 108px;
+    }
+    
+    .watchlistyellowstar{
+        border: none;
+        height: 8px;
+        position: relative;
+        top: -142px;
+        background: none;
+        left: 108px;
+    }
+    
+    .tickercompanyname{
+        font-size: 19px;
+        color: #747373;
+        position: relative;
+        left: 5px;
+        font-weight: 400;
+    }
+    
+    .tickerexchange{
+        font-size: 12px;
+        color: #272727;
+        position: relative;
+        left: -20px;
+    }
+    
+    .companylogo{
+        z-index: 1;
+        position: relative;
+        top: -95px;
+        left: 310px;
+        height: 80px;
+        width: 80px
+    }
+    
+    
+    .buybutton{
+        position: relative;
+        top: -40px;
+        left: 30px;
+        color: white;
+        background-color: green;
+        border: none;
+        border-radius: 5px;
+        width: 40px;
+        height: 25px;
+        
+    }
+    
+    .sellbutton{
+        position: relative;
+        top: -40px;
+        left: 40px;
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+        width: 40px;
+        height: 25px;
+    }
+    
+    .companycontent{
+        position: relative;
+        height: 50px;
+        width: 900px;
+        top: -260px;
+        left: 240px;
+       /* background-color: rgb(249, 248, 248);*/
+    }
+    
+    .summarytab{
+        /*border: none;*/
+        background: transparent;
+        width: 180px;
+        
+    }
+    
+    .newstab{
+        /*border: none;*/
+        background: transparent;
+        width: 180px;
+    }
+    
+    .charttab{
+        /*border: none;*/
+        background: transparent;
+        width: 180px;
+       
+    }
+    
+    .insighttab{
+        /*border: none;*/
+        background: transparent;
+        width: 180px;
+        
+        
+    }
+    
+    .companypercent{
+        height: 100px;
+        width: 200px;
+        position: relative;
+        z-index: 1;
+        left: 800px;
+        top: -390px;
+    }
+    
+    .currprice{
+        font-size: 28px;
+        font-weight: 500;
+    }
+    
+    .pricedifference{
+        font-size: 18px;
+    
+    }
+    
+    .timestampcurr{
+        font-size: 12px;
+        position: relative;
+        left: -5px;
+        color: #5d5d5d;
+        top: 2px;
+    }
+    
+    .price{
+        height: 100px;
+        width: 200px;
+        position: relative;
+        top: -240px;
+        left: 242px;
+        z-index: 1;
+        /*background-color: antiquewhite;*/
+    }
+    
+    .priceident{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .priceval{
+        font-size: 12px;
+    }
+    
+    .aboutcompany{
+        height: 200px;
+        width: 410px;
+        position: relative;
+        top: -240px;
+        left: 200px;
+        z-index: 1;
+        /*background-color: antiquewhite;*/
+        text-align: center;
+    }
+    
+    
+    
+    .aboutname{
+        text-decoration: underline;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    
+    
+    .aboutipo{
+        font-size: 12px;
+        font-weight: 500;
+        align-items: right;
+    }
+    
+    .ipoval{
+        font-size: 12px;
+        align-items: left;
+    }
+    
+    .aboutindustry{
+        font-size: 12px;
+        font-weight: 500;
+        align-items: right;
+       
+    
+    }
+    
+    .abouttable{
+        position: relative;
+        left: 110px;
+    }
+    
+    .industryval{
+        font-size: 12px;
+        align-items: left;
+    }
+    
+    .aboutwebsite{
+        font-size: 12px;
+        font-weight: 500;
+        align-items: right;
+    
+    }
+    
+    .websiteval{
+        font-size: 12px;
+        align-items: left;
+    }
+    
+    .aboutpeers{
+        font-size: 12px;
+        font-weight: 500;
+        position: relative;
+        left: 10px;
+        top: -8px;
+       
+    }
+    
+    .peerval{
+        font-size: 12px;
+        position: relative;
+        left: 13px;
+        top: -16px;
+    }
+    
+    .peer{
+        display: inline-block;
+    }
+    
+    
+    
+    .open{
+        color: green;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        left: 400px;
+        top: -50px;
+        position: relative;
+    }
+    
+    .close{
+        color: red;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        left: 304px;
+        top: -50px;
+        position: relative;
+    }
+    
+    .marketopen{
+        color: green;
+    }
+    
+    .marketclose{
+        color: red;
+    }
+    
+    
+    
+    .newscardtab{
+        column-gap: 40px;
+        row-gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+       left: 30px;
+        top: -250px;
+      
+    }
+    
+    .newscard{
+        position: relative;
+        width: 550px;
+        height: 90px;
+        background-color: rgb(231, 231, 231);
+        border-radius: 8px;
+        border: 0.5px solid rgb(128, 128, 128);
+    }
+    
+    .newscardimg{
+        width: 70px;
+        height: 70px;
+        position:absolute;
+        left: 20px;
+        top: 10px;
+    }
+    
+    .newscardheadline{
+        font-size: 13px;
+        position: absolute;
+        top: 10px;
+        left: 100px;
+    }
+    
+    .watchlistroute{
+        gap: 30px;
+        position: relative;
+        left: 150px;
+        width: 800px;
+        height: 100px;
+        border: 0.5px solid rgb(133, 133, 133);
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
+    
+    .watchlist{
+        width: 30px;
+        height: 30px;
+        background: none;
+        position: relative;
+        top: -20px;
+        left: 10px;
+    }
+    
+    .watchlistdisappearingmessage{
+        height: 40px;
+        width: 700px;
+        position: relative;
+        top: -250px;
+        left: 300px;
+        background-color: darkseagreen;
+        position: relative;
+       
+    }
+    
+    .buymodal{
+        display: block;
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        background-color: white;
+        left: 400px;
+        /*top: 110px;*/
+    }
+    
+    
+    .buttontab{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    .buttontab.active{
+        border-bottom-color: rgb(68, 51, 222);
+        color: rgb(68, 51, 222);
+    }
+    
+    .buttontab:not(.active) {
+        border-bottom: none; 
+    }
+    
+    .buttontab :hover{
+        background-color: #949393;
+    }
+    
+    .watchlistdisappearingtext{
+        z-index: 2;
+        font-size: 14px;
+        position: relative;
+        left: 270px;
+        top: 10px;
+    }
+    
+    .deletedfromwatchlist{
+        background-color: rgb(209, 103, 93);
+        height: 40px;
+        width: 700px;
+        position: relative;
+        top: -250px;
+        left: 300px;
+    }
+    
+    .deletedfromwatchlisttext{
+        z-index: 2;
+        font-size: 14px;
+        position: relative;
+        left: 270px;
+        top: 10px;
+    }
+    
+    .diappearingmsgbutton{
+        border: none;
+        background: none;
+        height: 60px;
+        width: 60px;
+        position: relative;
+        left: 640px;
+        top: -39px;
+    }
+    
+    .stocksbuybox{
+        background-color: darkseagreen;
+        height: 40px;
+        width: 700px;
+        position: relative;
+        top: -250px;
+        left: 300px;
+    }
+    
+    .stockssellbox{
+        background-color: rgb(209, 103, 93);
+        height: 40px;
+        width: 700px;
+        position: relative;
+        top: -250px;
+        left: 300px;
+    }
+    
+    .tickererror{
+        height: 40px;
+        width: 700px;
+        position: relative;
+        top: 30px;
+        left: 300px;
+        background-color:rgb(209, 103, 93); 
+    }
+    
+    .tickererrortext{
+        position: absolute;
+        top: -1px;
+        left: 230px;
+    }
+    
+    .spinner {
+        border: 4px solid gainsboro;
+        border-left-color: rgb(61, 61, 163);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 0.8s linear infinite;
+      }
+    
+      
+      
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    
+    .watchlistspinner{
+        border: 4px solid gainsboro;
+        border-left-color: rgb(49, 49, 191);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 0.8s linear infinite;  
+        position: relative;
+        left: 600px; 
+    
+    }
+    
+    .portfoliospinner{
+        border: 4px solid gainsboro;
+        border-left-color: rgb(49, 49, 191);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 0.8s linear infinite; 
+        position: relative;
+        left: 600px; 
+    }
+    
+    #twoyearchartdisplay{
+        width: 800px;
+        height: 400px;
+        position: relative;
+        top: -200px;
+        left: 240px;
+    }
+    
+    .insighttitle{
+        font-size: 24px;
+        font-weight: 500;
+        position: relative;
+        top: -270px;
+        left: 520px;
+    }
+    
+    .insighttable{
+        position: relative;
+        top: -270px;
+        left: 470px;
+        
+        border-collapse: collapse;
+    }
+    
+    .insighttable td{
+        width: 90px;
+        font-size: 13px;
+        border-bottom: 0.5px solid rgb(181, 181, 181);
+        align-items: center;
+        padding: 6px;
+    }
+    
+    .insightbold{
+        font-weight: 500;
+    
+    }
+    
+    #insightrecommendationtrends{
+        height: 500px;
+        width: 600px;
+        position: relative;
+        top: -200px;
+        left: 20px;
+    }
+    
+    #insightepschart{
+        height: 500px;
+        width: 600px;
+        position: relative;
+        top: -700px;
+        left: 630px;
+    }
+    
+    .newsmodaltitle{
+        position: relative;
+        top: -10px;
+        left: -10px;
+    }
+    
+    .newsdate{
+        position: relative;
+        top: -30px;
+        left: 15px;
+        font-size: 13px;
+        color: #787878;
+    }
+    
+    .newstitletab{
+        border-bottom: 0.5px solid rgb(160, 160, 160);
+        height: 65px;
+    }
+    
+    .newsclose{
+        background: none;
+        position: relative;
+        left: 320px;
+        top: -80px;
+        
+    }
+    
+    .newscontenttab{
+        width: 360px;
+        position: relative;
+        top: -67px;
+        height: 150px;
+        left: 10px;
+    }
+    
+    .newsheadline{
+        font-size: 17px;
+        font-weight: 500;
+        top: -20px;
+        position: absolute;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .newssummary{
+        font-size: 14px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #8f8f8f;
+        position: absolute;
+        top: 25px;
+    }
+    
+    .newslink{
+        font-size: 12px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #adadad;
+        top: 85px;
+        position: absolute;
+    }
+    
+    .newssharetab{
+        width: 340px;
+        height: 100px;
+        position: relative;
+        border: 0.5px solid rgb(160, 160, 160);
+        left: 10px;
+        top: -70px;
+    }
+    
+    .newsshare{
+        position: absolute;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #707070;
+        left: 10px;
+    }
+    
+    .twittwr{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background: none;
+        top: 40px;
+        left: 10px;
+    
+    }
+    
+    .facebook{
+        position: absolute;
+        border: none;
+        background: none;
+        width: 50px;
+        height: 50px;
+        top: 40px;
+        left: 70px;
+    }
+    
+    .buyhead{
+        width: 283px;
+        height: 50px;
+        border-bottom: 0.5px solid rgb(156, 156, 156);
+        position: relative;
+        left: -22px;
+        top: -35px;
+        
+    }
+    
+    .buysymbol{
+        position: relative;
+        left: 10px;
+        top: 10px;
+        font-size: 14px;
+        color: #333;
+    
+    }
+    
+    .buyclose{
+        position: relative;
+        border: none;
+        background: none;
+        left: 239px;
+        top: -40px;
+    }
+    
+    .buycontent{
+        width: 283px;
+        height: 100px;
+        position: relative;
+        left: -22px;
+        top: -32px;
+        border-bottom:0.5px solid #989898;
+    }
+    
+    .buycurr{
+        position: absolute;
+        font-size: 12px;
+        left: 20px;
+        top: -10px;
+        color: #5d5d5d;
+    }
+    
+    .buywallet{
+        position: absolute;
+        font-size: 12px;
+        left: 20px;
+        top: 10px;
+        color:#5d5d5d;
+    }
+    
+    .buyquantity{
+        position: relative;
+        font-size: 12px;
+        left: -3px;
+        top: -90px;
+        color:#5d5d5d;
+    
+    }
+    
+    .buyinput{
+        width: 160px;
+        position: relative;
+        top: -90px;
+    }
+    
+    .buyerror{
+        font-size: 12px;
+        position: relative;
+        color: rgb(228, 8, 8);
+        top: -100px;
+        left: -2px;
+    }
+    
+    .buytotal{
+        position: relative;
+        font-size: 12px;
+        left: -2px;
+        top: -100px;
+        color:#5d5d5d;
+    }
+    
+    .buymodalbutton{
+        border: none;
+        border-radius: 3px;
+        background-color: green;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        position: relative;
+        top: -137px;
+        left: 180px;
+        height: 20px;
+        width: 40px;
+    }
+    
+    .buttondisabled{
+        background-color: rgb(137, 232, 137);
+    }
+    
+    .watchlistmain{
+        height: 406px;
+    }
+    
+    .watchlisthead{
+        position: relative;
+        left: 150px;
+        font-size: 30px;
+        top: -20px;
+    }
+    
+    .watchlistemptybox{
+        width: 800px;
+        height: 45px;
+        background-color: blanchedalmond;
+        border: 0.5px solid rgb(192, 192, 118);
+        border-radius: 5px;
+        position: relative;
+        left: 150px;
+    }
+    
+    .watchlistemptytext{
+        font-size: 12px;
+        position: relative;
+        left: 230px;
+    }
+    
+    .watchlistcard{
+        position: relative;
+        left: 40px;
+        width: 800px;
+        height: 100px;
+    }
+    
+    .watchlistticker{
+        font-size: 24px;
+        position: relative;
+        top: -20px;
+      }
+    
+      .watchlistname{
+        font-size: 16px;
+        position: relative;
+        top: -15px;
+      }
+    
+    .watchlistclose{
+        border: none;
+        background: none;
+        position: relative;
+        left: 770px;
+        height: 20px;
+        width: 20px;
+        top: 5px;
+    }
+    
+    .watchlistsummary{
+        position: relative;
+        left: 400px;
+        top: -70px;
+    }
+    
+    .summaryred{
+        font-size: 24px;
+        position: relative;
+        color: rgb(243, 8, 8);
+        top: -10px;
+    }
+    
+    .summarygreen{
+        font-size: 24px;
+        position: relative;
+        color: green;
+        top: -10px;
+    }
+    
+    .differencered{
+        position: relative;
+        color: rgb(243, 8, 8);
+        font-size: 16px;
+        left: 5px;
+    }
+    
+    .differencegreen{
+        position: relative;
+        color: green;
+        font-size: 16px;
+        left: 5px;
+    }
+    
+    .portfoliocontainer{
+        height: 406px;
+    }
+    
+    .portfoliohead{
+        position: relative;
+        left: 150px;
+        font-size: 30px;
+        top: -20px;
+    }
+    
+    .portfolioemptybox{
+        width: 800px;
+        height: 45px;
+        background-color: blanchedalmond;
+        border: 0.5px solid rgb(192, 192, 118);
+        border-radius: 5px;
+        position: relative;
+        left: 150px;
+    }
+    
+    .portfolioemptytext{
+        font-size: 12px;
+        position: relative;
+        left: 230px;
+    
+    }
+    
+    .porfoliowallet{
+        font-size: 20px;
+        left: 150px;
+        top: -30px;
+        position: relative;
+    }
+    
+    .portfolioroute{
+        width: 800px;
+        height: 160px;
+        border: 0.5px solid gray;
+        left: 150px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    
+    .portfoliocompanydiv{
+        width: 800px;
+        height: 40px;
+        background-color: #e6e4e4;
+        border-bottom:0.5px solid gray; ;
+        position: absolute;
+    }
+    
+    .portcompticker{
+        font-size: 20px;
+        position: absolute;
+        left: 30px;
+        top: 5px;
+    }
+    
+    .portcompname{
+        font-size: 14px;
+        position: absolute;
+        left: 100px;
+        top: 10px;
+       
+    }
+    
+    .portquanttable{
+        position: absolute;
+        width: 320px;
+        top: 45px;
+        left: 30px;
+    }
+    
+    .portquanttable td{
+       text-align: left;
+       width: 160px;
+       font-size: 14px;
+       font-weight: 500;
+    }
+    
+    .portpricetable{
+        position: absolute;
+        width: 320px;
+        left: 390px;
+        top: 45px;
+    }
+    
+    .portpricetable td{
+        text-align: left;
+        width: 160px;
+        font-size: 14px;
+        font-weight: 500;   
+    }
+    
+    .buttonport{
+        position: absolute;
+        background-color: #e6e4e4;
+        border-top:0.5px solid gray; ;
+        height: 40px;
+        width: 800px;
+        top: 119px;
+    }
+    
+    .portbuybutton{
+        background-color: rgb(36, 36, 183);
+        color: white;
+        height: 30px;
+        width: 40px;
+        border: none;
+        border-radius: 5px;
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+    
+    .portsellbutton{
+        background-color: rgb(183, 36, 36);
+        color: white;
+        height: 30px;
+        width: 40px;
+        border: none;
+        border-radius: 5px;
+        position: absolute;
+        top: 5px;
+        left: 60px;
+    }
+    
+    .watchlistfooter{
+        position: relative;
+        height: 40px;
+        background-color: rgb(216, 216, 222);
+        top: 310px;
+       
+    
+    }
+    
+    .portfoliofooter{
+        position: relative;
+        height: 40px;
+        background-color: rgb(216, 216, 222);
+        top: 320px;
+       
+    
+    }
+    
+    .portfoliostocksbuybox{
+        background-color: rgb(99, 185, 136);
+       
+    }
+    
+    .portfoliostockssellbox{
+        background-color: rgb(180, 120, 120);
+    }
+    
+    .portchangeblack{
+        color: black;
+    }
+    
+    .portchangered{
+        color: red;
+    }
+    
+    .portchangegreen{
+        color: green;
+    }
+    
+    .portcurrgreen{
+        color: green;
+    }
+    
+    .portcurrred{
+        color: red;
+    }
+    
+    .portcurrblack{
+        color: black;
+    }
+    
+    .portvalgreen{
+        color: green;
+    }
+    
+    .portvalred{
+        color: red;
+    }
+    
+    .portvalblack{
+        color: black;
+    }
+    
+    .watchlistfooterword{
+        position: absolute;
+        top: -5px;
+        left: 550px;
+    }
+    
+    #hourchartdisplay{
+        width: 500px;
+        position: relative ;
+        top: -570px;
+        left: 620px;
+    }
+    
+    .navbutton.active{
+        border: white;
+       
+    }
+    
+    .navbutton:not(.active) {
+        border: none; 
+    }
+    
+    .spinerdiv{
+        width: 350px;
+        left: 100px;
+        position: relative;
+        background: gainsboro;
+    }
+    
+    
+    @media screen and (max-width: 428px) {
+        
+        
+        .navbar{
+            
+            height: 50px;
+            background-color: rgb(18, 18, 155);
+            color: white;
+            position: relative;
+            top: -20px;
+        }
+        
+        .heading{
+            padding-left: 10px;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 18px; 
+            position: relative;
+            top: 12px;
+            
+        }
+    
+        .mainheading{
+            left: -465px;
+            position: relative;
+            font-size: 30px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight:350;
+            white-space: nowrap;
+        }
+        
+       
+        
+        .inputbar{
+            position: relative;
+            left: 50px;
+        }
+        
+        .inputbar input{
+            width: 200px;
+            height: 25px;
+            border: solid rgb(37, 37, 171);
+            border-right: none;
+            border-top-left-radius: 13px;
+            border-bottom-left-radius: 13px;
+            
+            position: relative;
+            top: -1.9px;
+            box-shadow: none;
+        
+        }
+        
+        .inputsearchbutton{
+            background: transparent;
+            border-left: none;
+            border-right: none;
+            border-top:solid rgb(37, 37, 171);
+            border-bottom: solid rgb(37, 37, 171);
+            height: 30.4px;
+        }
+        
+        .inputclearbutton{
+            background: transparent;
+            border-left: none;
+            border-top:solid rgb(37, 37, 171);
+            border-bottom: solid rgb(37, 37, 171);
+            border-right:solid rgb(37, 37, 171);
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            height: 30.4px;
+        }
+        
+        
+        .footer{
+            position: relative;
+            height: 40px;
+            background-color: rgb(216, 216, 222);
+            top: 325px;
+            display: flex;
+            width: 390px;
+        }
+        
+        .footerword{
+            position: absolute;
+            font-size: 16px;
+            white-space: nowrap;
+            left: -470px;
+    
+        }
+    
+        .tickererror{
+            height: 40px;
+            width: 270px;
+            position: relative;
+            top: 30px;
+            left: 50px;
+            background-color:rgb(209, 103, 93); 
+        }
+        
+        .tickererrortext{
+            position: absolute;
+            top: -5px;
+            left: 30px;
+            white-space: nowrap;
+        }
+    
+        .companydetails{
+            z-index: 1;
+            position: relative;
+            left: -7px;
+            width: 100px;
+            height: 130px;
+            white-space: nowrap;
+          
+        }
+    
+        .tickername{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .watchlistwhitestar{
+            border: none;
+            height: 8px;
+            position: relative;
+            top: -110px;
+            background: none;
+            left: 108px;
+        }
+        
+        .watchlistyellowstar{
+            border: none;
+            height: 8px;
+            position: relative;
+            top: -110px;
+            background: none;
+            
+        }
+        
+        .tickercompanyname{
+            font-size: 14px;
+            color: #747373;
+            position: relative;
+            left: 5px;
+            font-weight: 400;
+        }
+        
+        .tickerexchange{
+            font-size: 10px;
+            color: #272727;
+            position: relative;
+            left: -20px;
+        }
+        
+        .companylogo{
+            z-index: 1;
+            position: relative;
+            top: -95px;
+            left: 80px;
+            height: 60px;
+            width: 60px
+        }
+        
+        
+        .buybutton{
+            position: relative;
+            top: -50px;
+            left: 30px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 25px;
+            
+        }
+        
+        .sellbutton{
+            position: relative;
+            top: -50px;
+            left: 40px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 25px;
+        }
+    
+        .companypercent{
+            height: 100px;
+            width: 100px;
+            position: relative;
+            z-index: 1;
+            left: 227px;
+            top: -390px;
+            white-space: nowrap;
+        }
+        
+        .currprice{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .pricedifference{
+            font-size: 14px;
+        
+        }
+        
+        .timestampcurr{
+            font-size: 10px;
+            position: relative;
+            left: -5px;
+            color: #5d5d5d;
+            top: 2px;
+        }
+    
+        .open{
+            color: green;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            left: 110px;
+            top: -30px;
+            position: relative;
+        }
+        
+        .close{
+            color: red;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            left: 90px;
+            top: -30px;
+            position: relative;
+        }
+        
+        .marketopen{
+            color: green;
+        }
+        
+        .marketclose{
+            color: red;
+        }
+    
+      
+        
+      .companycontent{
+        position: relative;
+        height: 50px;
+        width: 900px;
+        top: -260px;
+        left: 45px;
+       /* background-color: rgb(249, 248, 248);*/
+       white-space: nowrap;
+    }  
+    
+    .summarytab{
+        /*border: none;*/
+        background: transparent;
+        width: 70px;
+        
+    }
+    
+    .newstab{
+        /*border: none;*/
+        background: transparent;
+        width: 70px;
+    }
+    
+    .charttab{
+        /*border: none;*/
+        background: transparent;
+        width: 70px;
+       
+    }
+    
+    .insighttab{
+        /*border: none;*/
+        background: transparent;
+        width: 70px;
+    }
+    
+    .summarydetails{
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .price{
+        height: 100px;
+        width: 200px;
+        position: relative;
+        top: -240px;
+        left: 30px;
+        z-index: 1;
+        /*background-color: antiquewhite;*/
+    }
+    
+    .priceident{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .priceval{
+        font-size: 16px;
+    }
+    
+    .aboutcompany{
+        height: 200px;
+        width: 410px;
+        position: relative;
+        top: -240px;
+        left: -10px;
+        z-index: 1;
+        /*background-color: antiquewhite;*/
+        text-align: center;
+    }
+    
+    
+    
+    .aboutname{
+        text-decoration: underline;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    
+    .aboutipo{
+        font-size: 16px;
+        font-weight: 500;
+        align-items: right;
+    }
+    
+    .ipoval{
+        font-size: 16px;
+        align-items: left;
+    }
+    
+    .aboutindustry{
+        font-size: 16px;
+        font-weight: 500;
+        align-items: right;
+       
+    
+    }
+    
+    .abouttable{
+        position: relative;
+        left: 60px;
+    }
+    
+    .industryval{
+        font-size: 16px;
+        align-items: left;
+    }
+    
+    .aboutwebsite{
+        font-size: 16px;
+        font-weight: 500;
+        align-items: right;
+    
+    }
+    
+    .websiteval{
+        font-size: 12px;
+        align-items: left;
+    }
+    
+    .aboutpeers{
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        left: 20px;
+        top: -8px;
+       
+    }
+    
+    .peerval{
+        font-size: 12px;
+        position: relative;
+        left: 13px;
+        top: -16px;
+    }
+    
+    .peer{
+        display: inline-block;
+    }
+    
+    #hourchartdisplay{
+        width: 300px;
+        height: 300px;
+        position: relative ;
+        top: -200px;
+        left: 20px;
+    }
+    
+    .newscardtab{
+        column-gap: 40px;
+        row-gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        position: relative;
+        justify-content: center; 
+        align-items: center;
+       left: 30px;
+        top: -250px;
+      
+    }
+    
+    .newscard{
+        position: relative;
+        width: 290px;
+        height: 290px;
+        background-color: rgb(231, 231, 231);
+        border-radius: 8px;
+        border: 0.5px solid rgb(128, 128, 128);
+    }
+    
+    .newscardimg{
+        width: 160px;
+        height: 140px;
+        position:absolute;
+        left: 60px;
+        top: 10px;
+    }
+    
+    .newscardheadline{
+        font-size: 17px;
+        position: absolute;
+        top: 140px;
+        left: 15px;
+    }
+    
+    #twoyearchartdisplay{
+        width: 300px;
+        height: 800px;
+        position: relative;
+        top: -200px;
+        left: 50px;
+    }
+    
+    .insighttitle{
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+        top: -270px;
+        left: 100px;
+    }
+    
+    .insighttable{
+        position: relative;
+        top: -270px;
+        left: 50px;
+        
+        border-collapse: collapse;
+    }
+    
+    .insighttable td{
+        width: 90px;
+        font-size: 13px;
+        border-bottom: 0.5px solid rgb(181, 181, 181);
+        align-items: center;
+        padding: 6px;
+    }
+    
+    .insightbold{
+        font-weight: 500;
+    
+    }
+    
+    #insightrecommendationtrends{
+        height: 600px;
+        width: 350px;
+        position: relative;
+        top: -200px;
+        left: 15px;
+    }
+    
+    #insightepschart{
+        height: 600px;
+        width: 350px;
+        position: relative;
+        top: -100px;
+        left: 15px;
+    }
+    
+    .watchlistdisappearingmessage{
+        height: 40px;
+        width: 300px;
+        position: relative;
+        top: -250px;
+        left: 30px;
+        background-color: darkseagreen;
+        position: relative;
+       
+    }
+    
+    .deletedfromwatchlist{
+        background-color: rgb(209, 103, 93);
+        height: 40px;
+        width: 300px;
+        position: relative;
+        top: -250px;
+        left: 30px;
+    }
+    
+    .stocksbuybox{
+        background-color: darkseagreen;
+        height: 40px;
+        width: 300px;
+        position: relative;
+        top: -250px;
+        left: 30px;
+    }
+    
+    .stockssellbox{
+        background-color: rgb(209, 103, 93);
+        height: 40px;
+        width: 300px;
+        position: relative;
+        top: -250px;
+        left: 30px;
+    }  
+    
+    .watchlistdisappearingtext{
+        z-index: 2;
+        font-size: 14px;
+        position: relative;
+        left: 75px;
+        top: 10px;
+    }
+    
+    
+    .deletedfromwatchlisttext{
+        z-index: 2;
+        font-size: 14px;
+        position: relative;
+        left: 75px;
+        top: 10px;
+    }
+    
+    .searchbutton{
+        position: relative;
+        left: 95px;
+        background: transparent;
+        height: 30px;
+        font-size: 10px;
+        width: 60px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+        text-decoration: none;
+        border-color: white; 
+        
+    }
+    
+    .searchtext{
+        text-decoration: none;
+        color: white;
+        size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .watchlistbutton{
+        position: relative;
+        left: 95px;
+        background: transparent;
+        width:60px;
+        height: 30px;
+        font-size: 10px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+        text-decoration: none;
+        border-color: white;
+       
+    }
+    
+    .watchlisttext{
+        text-decoration: none;
+        color: white;
+        size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .portfoliobutton{
+        position: relative;
+        background: transparent;
+        height: 30px;
+        width:60px;
+        font-size: 10px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+        right: 10px;
+        text-decoration: none;
+        left: 95px;
+        border-color: white;
+       
+    }
+    
+    .portfoliotext{
+        text-decoration: none;
+        color: white;
+        size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .watchlisthead{
+        position: relative;
+        left: 20px;
+        font-size:24px;
+        top: -20px;
+    }
+    
+    .watchlistemptybox{
+        width: 350px;
+        height: 45px;
+        background-color: blanchedalmond;
+        border: 0.5px solid rgb(192, 192, 118);
+        border-radius: 5px;
+        position: relative;
+        left: 20px;
+    }
+    
+    .watchlistemptytext{
+        font-size: 12px;
+        position: relative;
+        left: 40px;
+    }
+    
+    
+    
+    .watchlistticker{
+        font-size: 28px;
+        position: relative;
+        top: -20px;
+        left: -15px;
+      }
+    
+      .watchlistname{
+        font-size: 20px;
+        position: relative;
+        top: -15px;
+        left: -15px;
+      }
+    
+    .watchlistclose{
+        border: none;
+        background: none;
+        position: relative;
+        left: 320px;
+        height: 20px;
+        width: 20px;
+        top: 5px;
+    }
+    
+    .watchlistsummary{
+        position: relative;
+        left: 140px;
+        top: -86px;
+    }
+    
+    .summaryred{
+        font-size: 28px;
+        position: relative;
+        color: rgb(243, 8, 8);
+        top: -10px;
+    }
+    
+    .summarygreen{
+        font-size: 28px;
+        position: relative;
+        color: green;
+        top: -10px;
+    }
+    
+    .differencered{
+        position: relative;
+        color: rgb(243, 8, 8);
+        font-size: 20px;
+        left: 5px;
+    }
+    
+    .differencegreen{
+        position: relative;
+        color: green;
+        font-size: 20px;
+        left: 5px;
+    }
+    
+    .watchlistroute{
+        gap: 30px;
+        position: relative;
+        left: 20px;
+        width: 350px;
+        height: 150px;
+        border: 0.5px solid rgb(133, 133, 133);
+        border-radius: 5px;
+        margin-bottom: 30px;
+    }
+    
+    .watchlistfooter{
+        position: relative;
+        height: 40px;
+        background-color: rgb(216, 216, 222);
+        top: 613px;
+       
+    
+    }
+    
+    .portfoliofooter{
+        position: relative;
+        height: 40px;
+        background-color: rgb(216, 216, 222);
+        top: 613px;
+    
+    }
+    
+    .watchlistfooterword{
+        position: absolute;
+        top: -5px;
+        left: 120px;
+        white-space: nowrap;
+    }
+    
+    .watchlistspinner{
+        border: 4px solid gainsboro;
+        border-left-color: rgb(49, 49, 191);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 0.8s linear infinite;  
+        position: relative;
+        left: 160px; 
+    
+    }
+    
+    .portfoliohead{
+        position: relative;
+        left: 20px;
+        font-size: 24px;
+        top: -20px;
+    }
+    
+    .portfolioemptybox{
+        width: 350px;
+        height: 45px;
+        background-color: blanchedalmond;
+        border: 0.5px solid rgb(192, 192, 118);
+        border-radius: 5px;
+        position: relative;
+        left: 20px;
+    }
+    
+    .portfolioemptytext{
+        font-size: 12px;
+        position: relative;
+        left: 40px;
+    
+    }
+    
+    .porfoliowallet{
+        font-size: 18px;
+        left: 20px;
+        top: -30px;
+        position: relative;
+    }
+    
+    .portfolioroute{
+        width: 350px;
+        height: 300px;
+        border: 0.5px solid gray;
+        left: 20px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    
+    .portfoliocompanydiv{
+        width: 350px;
+        height: 40px;
+        background-color: #e6e4e4;
+        border-bottom:0.5px solid gray; ;
+        position: absolute;
+    }
+    
+    .portcompticker{
+        font-size: 20px;
+        position: absolute;
+        left: 30px;
+        top: 5px;
+    }
+    
+    .portcompname{
+        font-size: 14px;
+        position: absolute;
+        left: 100px;
+        top: 10px;
+       
+    }
+    
+    .portquanttable{
+        position: absolute;
+        width: 320px;
+        top: 80px;
+        left: 30px;
+    }
+    
+    .portquanttable td{
+       text-align: left;
+       width: 160px;
+       font-size: 16px;
+       font-weight: 500;
+    }
+    
+    .portpricetable{
+        position: absolute;
+        width: 320px;
+        left: 30px;
+        top: 150px;
+    }
+    
+    .portpricetable td{
+        text-align: left;
+        width: 160px;
+        font-size: 16px;
+        font-weight: 500;   
+    }
+    
+    .buttonport{
+        position: absolute;
+        background-color: #e6e4e4;
+        border-top:0.5px solid gray; ;
+        height: 40px;
+        width: 350px;
+        top: 260px;
+    }
+    
+    .portbuybutton{
+        background-color: rgb(36, 36, 183);
+        color: white;
+        height: 30px;
+        width: 40px;
+        border: none;
+        border-radius: 5px;
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+    
+    .portsellbutton{
+        background-color: rgb(183, 36, 36);
+        color: white;
+        height: 30px;
+        width: 40px;
+        border: none;
+        border-radius: 5px;
+        position: absolute;
+        top: 5px;
+        left: 60px;
+    }
+    
+    
+    
+        
+      }

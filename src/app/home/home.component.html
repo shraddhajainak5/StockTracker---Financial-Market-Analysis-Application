@@ -1,0 +1,138 @@
+<p class="mainheading">STOCK SEARCH</p>
+<div class="inputdiv">
+  
+<form class="inputbar" >
+  
+    <input type="text" id="stockticker"  placeholder="Enter stock ticker symbol" matInput [formControl]="searchControl" [matAutocomplete]="auto" [value]="peerticker" >
+    
+    
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="display"  (optionSelected)="slectedsymbol($event)" >
+      <div *ngIf="!spinner">
+      <mat-option *ngFor="let option of autocompletecomp" [value]="option">
+        {{ option.displaySymbol }}|{{ option.description }}
+      </mat-option>
+    </div>
+    </mat-autocomplete>
+    <button type="button" class="inputsearchbutton" (click)="searchbuttonclick()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+    <button type="button" class="inputclearbutton" (click)="clearbutton()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+    </svg></button>
+   <div class="spinnerdiv" ><div *ngIf="spinner" class="spinner"></div></div> 
+  </form>
+  
+  <div *ngIf="tickererror&&!displaycontenttab" class="tickererror"><p class="tickererrortext">Please enter a valid ticker</p></div>
+  <div *ngIf="validticker" class="tickererror">No data found. Please enter a valid Ticker</div>
+</div>
+<div class="stocksbuybox" *ngIf="stocksboughtbox"><p class="watchlistdisappearingtext" *ngIf="stocksbought">{{data1.ticker}} bought successfully</p><button class="diappearingmsgbutton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button></div>
+<div class="stockssellbox" *ngIf="stockssoldbox"><p class="watchlistdisappearingtext" *ngIf="stockssold">{{data1.ticker}} sold successfully</p><button class="diappearingmsgbutton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button></div>
+<div class="watchlistdisappearingmessage" *ngIf="showaddedbox"><p class="watchlistdisappearingtext" *ngIf="addedtowtchlist">{{data1.ticker}} added to watchlist</p><button class="diappearingmsgbutton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button></div>
+<div class="deletedfromwatchlist" *ngIf="showdeletedbox"><p class="deletedfromwatchlisttext" *ngIf="deletedfromwatchlist">{{data1.ticker}} removed from watchlist</p><button class="diappearingmsgbutton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/></svg></button></div>
+
+<div *ngIf="data1&&data2">
+  
+  <div class="companydetails" *ngIf="displaycontenttab">
+    <ul>
+      <li class="tickername">{{ data1.ticker }}</li>
+      <li class="tickercompanyname">{{ data1.name }}</li>
+      <li class="tickerexchange">{{ data1.exchange }}</li>
+    </ul>
+    <div ></div>
+    <button class="watchlistwhitestar" (click)="postdatatowatchlist(data1.ticker)" *ngIf="!inwatchlist" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 256 256" xml:space="preserve">
+        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1; width:30px; height:30px" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+            <path d="M 69.671 88.046 c -0.808 0 -1.62 -0.195 -2.37 -0.59 L 45 75.732 L 22.7 87.456 c -1.727 0.907 -3.779 0.757 -5.356 -0.388 c -1.577 -1.146 -2.352 -3.052 -2.023 -4.972 l 4.259 -24.832 L 1.539 39.678 c -1.396 -1.361 -1.889 -3.358 -1.287 -5.213 c 0.603 -1.854 2.176 -3.181 4.105 -3.461 l 24.932 -3.622 L 40.44 4.79 C 41.303 3.041 43.05 1.955 45 1.955 c 0 0 0 0 0.001 0 c 1.949 0 3.696 1.086 4.559 2.834 l 11.15 22.592 l 24.932 3.623 c 1.93 0.28 3.503 1.606 4.105 3.461 c 0.603 1.854 0.109 3.851 -1.287 5.213 L 70.419 57.264 l 4.26 24.832 c 0.329 1.921 -0.446 3.827 -2.023 4.972 C 71.764 87.717 70.721 88.046 69.671 88.046 z M 7.055 36.676 l 17.058 16.628 c 1.198 1.167 1.746 2.85 1.462 4.502 l -4.027 23.479 l 21.086 -11.086 c 1.481 -0.779 3.25 -0.779 4.732 0 l 21.085 11.086 l -4.027 -23.48 c -0.283 -1.649 0.264 -3.333 1.463 -4.501 l 17.058 -16.628 L 59.372 33.25 c -1.658 -0.242 -3.089 -1.282 -3.829 -2.783 L 45 9.106 L 34.457 30.468 c -0.74 1.5 -2.171 2.54 -3.827 2.782 L 7.055 36.676 z M 84.779 36.942 h 0.011 H 84.779 z M 44.18 7.444 c 0 0 0 0.001 0.001 0.002 L 44.18 7.444 C 44.18 7.445 44.18 7.445 44.18 7.444 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+        </g>
+        </svg></button>
+    <button class="watchlistyellowstar" (click)="removewatchlistdata(data1.ticker)" *ngIf="inwatchlist" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 256 256" xml:space="preserve">
+        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+            <path d="M 45 2.024 C 45 2.024 45 2.024 45 2.024 c -1.398 0 -2.649 0.778 -3.268 2.031 L 29.959 27.911 c -0.099 0.2 -0.29 0.338 -0.51 0.37 L 3.122 32.107 c -1.383 0.201 -2.509 1.151 -2.941 2.48 c -0.432 1.329 -0.079 2.76 0.922 3.736 l 19.049 18.569 c 0.16 0.156 0.233 0.38 0.195 0.599 L 15.85 83.71 c -0.236 1.377 0.319 2.743 1.449 3.564 c 1.129 0.821 2.6 0.927 3.839 0.279 l 23.547 -12.381 c 0.098 -0.051 0.206 -0.077 0.314 -0.077 C 51.721 53.905 50.301 28.878 45 2.024 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,200,80); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            <path d="M 45 2.024 C 45 2.024 45 2.024 45 2.024 c 1.398 0 2.649 0.778 3.268 2.031 l 11.773 23.856 c 0.099 0.2 0.29 0.338 0.51 0.37 l 26.326 3.826 c 1.383 0.201 2.509 1.151 2.941 2.48 c 0.432 1.329 0.079 2.76 -0.922 3.736 L 69.847 56.892 c -0.16 0.156 -0.233 0.38 -0.195 0.599 L 74.15 83.71 c 0.236 1.377 -0.319 2.743 -1.449 3.564 c -1.129 0.821 -2.6 0.927 -3.839 0.279 L 45.315 75.172 c -0.098 -0.051 -0.206 -0.077 -0.314 -0.077 C 37.08 54.593 38.849 29.395 45 2.024 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,220,100); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+        </g>
+        </svg></button>
+
+    <button class="buybutton" (click)="openbuymodal()">Buy</button>
+    <button class="sellbutton" *ngIf="inbuysellcollection" (click)="opensellmodal()">Sell</button>
+    
+    <img class="companylogo" src="{{ data1.logo }}">
+    <p><span *ngIf="marketopen" class="open">Market is {{market}}</span> <span *ngIf="!marketopen" class="close">Market {{market}} on {{ lasttimestamp }}</span></p>
+  </div>
+  
+    
+  
+  <div class="companypercent" *ngIf="displaycontenttab">
+    <ul>
+      <li><span *ngIf="marketopen" class="marketopen currprice">{{data2.c}}</span><span *ngIf="!marketopen" class="marketclose currprice">{{data2.c}}</span></li>
+      <li><span *ngIf="marketopen&&data2.d>=0" class="marketopen pricedifference"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16" id="IconChangeColor"> <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" id="mainIconPathAttribute" fill="green"></path></svg>{{data2.d}}({{data2.dp}}%)</span>
+          <span *ngIf="!marketopen&&data2.d<0" class="marketclose pricedifference"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="IconChangeColor" height="13" width="13"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" id="mainIconPathAttribute" fill="#ff0000"></path></svg>{{data2.d}}({{data2.dp}}%)</span>
+          <span *ngIf="marketopen&&data2.d<0" class="marketopen pricedifference"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="IconChangeColor" height="13" width="13"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" id="mainIconPathAttribute" fill="green"></path></svg>{{data2.d}}({{data2.dp}}%)</span>
+          <span *ngIf="!marketopen&&data2.d>=0" class="marketclose pricedifference"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16" id="IconChangeColor"> <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" id="mainIconPathAttribute" fill="#ff0000"></path> </svg>{{data2.d}}({{data2.dp}}%)</span>
+      </li>
+      <li class="timestampcurr">{{currenttimestamp}}</li>
+    </ul>
+  </div>
+
+
+  <div class="companycontent" *ngIf="displaycontenttab&&contenttab">
+    <button  class="summarytab buttontab" [ngClass]="{ 'active': activetab === 'displaysummary' }"  (click) ="opentab('displaysummary')">Summary</button>
+    <button  class="newstab buttontab" [ngClass]="{ 'active': activetab === 'displaynews' }"  (click) ="opentab('displaynews')">Top News</button>
+    <button  class="charttab buttontab" [ngClass]="{ 'active': activetab === 'displaycharts' }"  (click) ="opentab('displaycharts')">Charts</button>
+    <button  class="insighttab buttontab" [ngClass]="{ 'active': activetab === 'displayinsights' }"  (click) ="opentab('displayinsights')">Insights</button>
+  </div>
+
+  <div id="displaysummary" class="tabcontent summarydetails" [hidden]="activetab !== 'displaysummary'" *ngIf="summary&&displaycontenttab">
+    <div class="price">
+      <table>
+        <tr><td class="priceident">High Price:</td><td class="priceval">{{data2.h}}</td></tr>
+        <tr><td class="priceident">Low Price:</td><td class="priceval">{{data2.l}}</td></tr>
+        <tr><td class="priceident">Open Price:</td><td class="priceval">{{data2.o}}</td></tr>
+        <tr><td class="priceident">Prev. Close:</td><td class="priceval">{{data2.pc}}</td></tr>
+      </table>
+    </div>
+    <div class="aboutcompany">
+      <p class="aboutname">About the company</p>
+      <table class="abouttable">
+        <tr><td class="aboutipo">IPO Start Date:</td><td class="ipoval">{{data1.ipo}}</td></tr>
+        <tr><td class="aboutindustry">Industry:</td><td class="industryval">{{data1.finnhubIndustry}}</td></tr>
+        <tr><td class="aboutwebsite">Webpage:</td><td class="websiteval"><a href="{{data1.weburl}}" target="_blank">{{data1.weburl}}</a></td></tr>
+      </table>
+      <div ><p class="aboutpeers">Company peers:</p> 
+        <div *ngFor="let peer of data3" class="peer peerval">
+          <a href="javascript:void(0);" (click)="navigatepeerdata(peer)">{{peer}}, </a>
+        </div>
+      </div>
+     
+  
+    </div>
+    <div id="hourchartdisplay" ></div>  
+    
+  </div>
+  
+  <div id="displaycharts" class="tabcontent" [hidden]="activetab !== 'displaycharts'" ><div id="twoyearchartdisplay" *ngIf="displaycontenttab"></div></div>
+  <div id="displayinsights" class="tabcontent" [hidden]="activetab !== 'displayinsights'"  *ngIf="displaycontenttab">
+    <div >
+        <p class="insighttitle">Insider Sentiments</p>
+        <table class="insighttable">
+            <tr><td class="insightbold">{{data1.ticker}}</td><td class="insightbold">MSPR</td><td class="insightbold">Change</td></tr>
+            <tr><td class="insightbold">Total</td><td>{{displaytotalmspr}}</td><td>{{displaytotalchange}}</td></tr>
+            <tr><td class="insightbold">Positive</td><td>{{displaypositivemspr}}</td><td>{{displaypositivechange}}</td></tr>
+            <tr><td class="insightbold">Negative</td><td>{{displaynegativemspr}}</td><td>{{displaynegativechange}}</td></tr>
+        </table>
+    </div>
+   
+    <div id="insightrecommendationtrends" ></div>
+  
+    <div id="insightepschart" ></div>
+  </div>
+
+  <div id="displaynews" class="tabcontent" [hidden]="activetab !== 'displaynews'" *ngIf="news" >
+    <div class="newscardtab">
+    <div class="newscard" *ngFor="let items of data5" (click)="openmodalwindow(items)">
+        <img class="newscardimg" [src]="items.image">
+        <p class="newscardheadline">{{items.headline}}</p>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footerword">Powered By <a href="https://finnhub.io/">Finnhub.io</a></p>
+</div>
+

@@ -1,0 +1,31 @@
+<div >
+    <p class="watchlisthead">My Watchlist</p>
+    <div *ngIf="watchlistloadingspinner" class="watchlistspinner"></div>
+    <div *ngIf="!watchlistloadingspinner">
+    <div class="watchlistemptybox" *ngIf="watchlistcollectiondata.length === 0" >
+        <p class="watchlistemptytext">Currently you don't have any stock in your watchlist.</p>
+      </div>
+        <div *ngFor="let items of watchlistcollectiondata" class="watchlistroute">
+          <div >
+            <button class="watchlistclose" (click)="deletewatchlistdata(items.ticker)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg></button>
+            <ul>
+                <li class="watchlistticker">{{items.ticker}}</li>
+                <li class="watchlistname">{{items.name}}</li>
+            </ul>
+            <ul class="watchlistsummary" *ngIf="items.summary">
+                <li *ngIf="items.summary.d>=0" class="summarygreen">{{items.summary.c}}</li>
+                <li *ngIf="items.summary.d<0" class="summaryred">{{items.summary.c}}</li>
+                <li *ngIf="items.summary.d>=0" class="differencegreen"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16" id="IconChangeColor"> <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" id="mainIconPathAttribute" fill="green"></path></svg>{{items.summary.d}}({{items.summary.dp}}%)</li>
+                <li *ngIf="items.summary.d<0" class="differencered"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="IconChangeColor" height="15" width="15"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" id="mainIconPathAttribute" fill="#ff0000"></path></svg>{{items.summary.d}}({{items.summary.dp}}%)</li>
+            </ul>
+    
+        
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="watchlistfooter">
+      <p class="watchlistfooterword">Powered By <a href="https://finnhub.io/">Finnhub.io</a></p>
+    </div>
