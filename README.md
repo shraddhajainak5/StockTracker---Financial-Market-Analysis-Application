@@ -1,1 +1,1 @@
-# StockTracker---Financial-Market-Analysis-Application
+# StockTracker-Financial-Market-Analysis-Application
